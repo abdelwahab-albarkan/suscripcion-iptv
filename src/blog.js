@@ -9,8 +9,9 @@ const pick = (a, s) => a[hash(s) % a.length];
 const has = (s) => /suscripción iptv/i.test(s);
 const cut = (s, n) => s.length <= n ? s : s.slice(0, n).replace(/\s+\S*$/, '');
 
+const XTRA = {}; ['x1', 'x2', 'x3', 'x4', 'x5'].forEach(f => { const p = path.join(__dirname, 'articles', f + '.js'); if (fs.existsSync(p)) for (const [k, v] of Object.entries(require(p))) (XTRA[k] ||= []).push(...v); });
 const all = [];
-CATS.forEach(([f, name]) => { const p = path.join(__dirname, 'articles', f + '.js'); if (fs.existsSync(p)) require(p).forEach(a => all.push({ cat: name, slug: a[0], h1: a[1], desc: a[2], intro: a[3], secs: a[4], faqs: a[5] })); });
+CATS.forEach(([f, name]) => { const p = path.join(__dirname, 'articles', f + '.js'); if (fs.existsSync(p)) require(p).forEach(a => all.push({ cat: name, slug: a[0], h1: a[1], desc: a[2], intro: a[3], secs: a[4].concat(XTRA[a[0]] || []), faqs: a[5] })); });
 const url = (a) => `blog/${a.slug}-suscripcion-iptv.html`;
 
 const OUTRO = [

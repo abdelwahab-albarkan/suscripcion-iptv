@@ -82,6 +82,9 @@ if (/Disallow:\s*\/\s*$/m.test(robots)) bad('robots.txt bloquea todo el sitio', 
   if (missing.length) bad('Clases usadas sin estilo en el CSS final', missing.slice(0, 12).join(', ') + (missing.length > 12 ? '…' : ''));
 }
 
+// --- datos legales del titular (LSSI-CE art. 10)
+{ try { const L = JSON.parse(fs.readFileSync(path.join(__dirname, 'legal.json'), 'utf8')); const miss = ['titular', 'nif', 'domicilio'].filter(k => !String(L[k] || '').trim()); if (miss.length) wr('Aviso legal sin datos del titular (completa src/legal.json)', miss.join(', ')); } catch (e) { wr('No se pudo leer src/legal.json', '-'); } }
+
 // --- informe
 const n = files.length, avg = dens.reduce((a, b) => a + b, 0) / n;
 console.log(`\nPáginas analizadas: ${n} · dominio: ${C.domain} · sitemaps: ${smFiles} (${inSitemap.size} URLs)`);

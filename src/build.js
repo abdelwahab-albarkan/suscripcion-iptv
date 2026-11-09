@@ -364,11 +364,11 @@ pages.push({
 <button class="btn p" type="submit">Enviar por WhatsApp</button></form></div></div></section>
 <section class="alt" id="legal"><div class="wrap"><article class="prose">
 <h2>Aviso legal y privacidad de la ${K}</h2>
-<p>Esta web ofrece información sobre ${K}. El titular y los datos fiscales deben completarse antes de publicar el sitio. Los datos personales que facilites al contactar se usan únicamente para atender tu consulta sobre la ${K} y no se ceden a terceros.</p>
+<p>Consulta el <a href="aviso-legal-suscripcion-iptv.html">aviso legal</a>, la <a href="politica-de-privacidad-suscripcion-iptv.html">política de privacidad</a> y las <a href="condiciones-contratacion-suscripcion-iptv.html">condiciones de contratación</a>. Los datos que nos envíes se usan únicamente para atender tu consulta y gestionar tu contratación. Atendemos las solicitudes lo antes posible y conservamos tus mensajes solo durante el tiempo necesario para resolverlas.</p>
 <h3>Uso responsable de la ${K}</h3>
-<p>El usuario es responsable de utilizar la ${K} conforme a la legislación vigente y a los derechos de propiedad intelectual de los contenidos.</p>
+<p>El usuario es responsable de utilizar el servicio conforme a la legislación vigente y a los derechos de propiedad intelectual de los contenidos, así como de custodiar sus datos de acceso.</p>
 <h3>Cookies</h3>
-<p>Este sitio no utiliza cookies de seguimiento por defecto. Si añades analítica o publicidad, incluye un banner de consentimiento.</p>
+<p>Este sitio no utiliza cookies de seguimiento. Más información en la <a href="politica-de-cookies-suscripcion-iptv.html">política de cookies</a>.</p>
 </article></div></section>${band(`Tu ${K}, a un mensaje`, `Escríbenos y activamos tu ${K} hoy.`, `<a class="btn p" href="https://wa.me/${C.wa}">Abrir WhatsApp →</a>`)}`
 });
 
@@ -384,7 +384,7 @@ const footer = () => `<footer class="site"><div class="wrap"><div class="fg">
 <div><a class="logo" href="index.html"><i>▶</i>${C.brand}</a><p style="margin-top:14px">Tu ${K} en España con canales HD y 4K, deportes y VOD. Soporte en español y sin permanencia.</p></div>
 <div><h4>${KC}</h4><ul><li><a href="suscripcion-iptv-precios.html">Precios</a></li><li><a href="suscripcion-iptv-canales.html">Canales</a></li><li><a href="suscripcion-iptv-futbol.html">Fútbol</a></li></ul></div>
 <div><h4>Ayuda</h4><ul><li><a href="como-contratar-suscripcion-iptv.html">Cómo contratar</a></li><li><a href="suscripcion-iptv-dispositivos.html">Dispositivos</a></li><li><a href="preguntas-frecuentes-suscripcion-iptv.html">FAQ</a></li><li><a href="mejor-suscripcion-iptv-guia.html">Guía</a></li></ul></div>
-<div><h4>Contacto</h4><ul><li><a href="contacto-suscripcion-iptv.html">Soporte</a></li><li><a href="contacto-suscripcion-iptv.html#legal">Aviso legal</a></li><li><a href="ciudades/index.html">Por ciudades</a></li><li><a href="equipos/index.html">Equipos</a></li><li><a href="canales/index.html">Canales TDT</a></li><li><a href="dispositivos/index.html">Dispositivos</a></li><li><a href="competiciones/index.html">Deportes</a></li><li><a href="guias/index.html">Guías</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="https://wa.me/${C.wa}">WhatsApp</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li><a href="contacto-suscripcion-iptv.html">Soporte</a></li><li><a href="aviso-legal-suscripcion-iptv.html">Aviso legal</a></li><li><a href="politica-de-privacidad-suscripcion-iptv.html">Privacidad</a></li><li><a href="politica-de-cookies-suscripcion-iptv.html">Cookies</a></li><li><a href="condiciones-contratacion-suscripcion-iptv.html">Condiciones</a></li><li><a href="ciudades/index.html">Por ciudades</a></li><li><a href="equipos/index.html">Equipos</a></li><li><a href="canales/index.html">Canales TDT</a></li><li><a href="dispositivos/index.html">Dispositivos</a></li><li><a href="competiciones/index.html">Deportes</a></li><li><a href="guias/index.html">Guías</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="https://wa.me/${C.wa}">WhatsApp</a></li></ul></div>
 </div><div class="foot-pay">${IM.payStrip('Pago seguro')}</div><div class="copy"><span>© ${C.year} ${C.brand}. Todos los derechos reservados.</span><span>${KC} en España</span></div></div></footer>
 <a class="wa" href="https://wa.me/${C.wa}" aria-label="WhatsApp ${K}"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 01-11.5 7.2L4 21l1.8-5.2A8 8 0 1121 12z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-.8.8c-.8-.4-1.5-1.1-1.9-1.9l.8-.8-1-2z" fill="#fff" stroke="none"/></svg></a>`;
 
@@ -501,6 +501,7 @@ ${footer()}
 </body></html>`;
 }
 
+require('./legal.js')({ C, K, KC }).forEach(p => pages.push(p)); // aviso legal, privacidad, cookies, condiciones
 pages.forEach(p => { if (!p.hero && !p.img) { const f = IM.forPage(p); if (f) p.img = f; } });
 module.exports = { C, K, KC, OUT, card, faq, cta, band, plan, pricing, usd, render, tune, plain, kcount, icon };
 if (require.main !== module) return;

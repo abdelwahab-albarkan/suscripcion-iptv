@@ -1,0 +1,7 @@
+{
+  "_ayuda": "Completa estos datos del titular del sitio (obligatorios por la LSSI-CE, art. 10). Mientras estén vacíos no se muestran en el Aviso legal; `npm run verify` te avisará.",
+  "titular": "",
+  "nif": "",
+  "domicilio": "",
+  "registro": ""
+}
