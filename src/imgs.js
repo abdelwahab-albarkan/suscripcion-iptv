@@ -14,7 +14,7 @@ function img(id, alt, o = {}) {
   const ws = Object.keys(m.f).map(Number).sort((a, b) => a - b);
   const big = m.f[ws[ws.length - 1]];
   const srcset = ws.length > 1 ? ` srcset="${ws.map(w => `@/assets/img/${m.f[w]} ${w}w`).join(', ')}" sizes="${o.sizes || '(max-width:900px) 100vw, 560px'}"` : '';
-  return `<img src="@/assets/img/${big}"${srcset} width="${m.w}" height="${m.h}" alt="${esc(alt)}"${o.eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"${o.cls ? ` class="${o.cls}"` : ''}>`;
+  return `<img src="@/assets/img/${big}"${srcset} width="${m.w}" height="${m.h}" alt="${esc(alt)}"${m.bg ? ` style="background:${m.bg}"` : ''}${o.eager ? ' fetchpriority="high" decoding="sync"' : ' loading="lazy" decoding="async"'}${o.cls ? ` class="${o.cls}"` : ''}>`;
 }
 
 // <link rel="preload"> de la imagen principal (mejora el LCP)

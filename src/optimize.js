@@ -43,7 +43,7 @@ const kb = (n) => (n / 1024).toFixed(1) + ' KB';
   }
 
   // 3) Cabeceras de caché (Netlify / Cloudflare Pages)
-  fs.writeFileSync(path.join(OUT, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/assets/img/*\n  Cache-Control: public, max-age=2592000\n/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.css\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.js\n  Cache-Control: public, max-age=31536000, immutable\n/*.html\n  Cache-Control: public, max-age=0, must-revalidate\n`);
+  if (!fs.existsSync(path.join(__dirname, 'static', '_headers'))) fs.writeFileSync(path.join(OUT, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n/assets/img/*\n  Cache-Control: public, max-age=2592000\n/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.css\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.js\n  Cache-Control: public, max-age=31536000, immutable\n/*.html\n  Cache-Control: public, max-age=0, must-revalidate\n`);
 
   // 4) Ficheros de despliegue: clave IndexNow, CNAME (dominio propio) y .nojekyll (GitHub Pages)
   try {

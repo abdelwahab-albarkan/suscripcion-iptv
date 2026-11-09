@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded',function(){
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if('IntersectionObserver' in window&&!reduce){
     var els=document.querySelectorAll('.card,.step,.plan,.band,details,.tbl,.tv,.head,.strip');
-    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-    els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%4)*60+'ms';io.observe(el);});
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.01,rootMargin:'0px 0px 200px 0px'});
+    els.forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight*0.95)return;el.classList.add('rv');io.observe(el);});
   }
 
   // ---- Brillo que sigue al ratón en tarjetas ----

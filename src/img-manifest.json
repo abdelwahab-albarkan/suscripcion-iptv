@@ -6,7 +6,8 @@
    "720": "room-warm-720.webp",
    "1280": "room-warm-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#473122"
  },
  "theater": {
   "w": 1280,
@@ -15,7 +16,8 @@
    "720": "theater-720.webp",
    "1280": "theater-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#3d2b21"
  },
  "family": {
   "w": 1280,
@@ -24,7 +26,8 @@
    "720": "family-720.webp",
    "1280": "family-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#2b3f62"
  },
  "oled-sports": {
   "w": 1280,
@@ -33,7 +36,8 @@
    "720": "oled-sports-720.webp",
    "1280": "oled-sports-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#2f2520"
  },
  "smarters-ui": {
   "w": 1280,
@@ -42,7 +46,8 @@
    "720": "smarters-ui-720.webp",
    "1280": "smarters-ui-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#3b281b"
  },
  "epg-light": {
   "w": 1280,
@@ -51,7 +56,8 @@
    "720": "epg-light-720.webp",
    "1280": "epg-light-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#8d898b"
  },
  "epg-tivimate": {
   "w": 1280,
@@ -60,7 +66,8 @@
    "720": "epg-tivimate-720.webp",
    "1280": "epg-tivimate-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#122a3f"
  },
  "remote-hand": {
   "w": 1280,
@@ -69,7 +76,8 @@
    "720": "remote-hand-720.webp",
    "1280": "remote-hand-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#3f3732"
  },
  "chromecast": {
   "w": 1280,
@@ -78,7 +86,8 @@
    "720": "chromecast-720.webp",
    "1280": "chromecast-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#553f32"
  },
  "devices-collection": {
   "w": 1280,
@@ -87,7 +96,8 @@
    "720": "devices-collection-720.webp",
    "1280": "devices-collection-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#181c22"
  },
  "ethernet": {
   "w": 1280,
@@ -96,7 +106,8 @@
    "720": "ethernet-720.webp",
    "1280": "ethernet-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#07192b"
  },
  "router": {
   "w": 1280,
@@ -105,7 +116,8 @@
    "720": "router-720.webp",
    "1280": "router-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#0a4162"
  },
  "shield1": {
   "w": 1280,
@@ -114,7 +126,8 @@
    "720": "shield1-720.webp",
    "1280": "shield1-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#033162"
  },
  "shield2": {
   "w": 1280,
@@ -123,7 +136,8 @@
    "720": "shield2-720.webp",
    "1280": "shield2-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#041e42"
  },
  "vpn": {
   "w": 1280,
@@ -132,7 +146,8 @@
    "720": "vpn-720.webp",
    "1280": "vpn-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#082f52"
  },
  "blue-room": {
   "w": 1280,
@@ -141,7 +156,8 @@
    "720": "blue-room-720.webp",
    "1280": "blue-room-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#123149"
  },
  "google-dash": {
   "w": 1280,
@@ -150,7 +166,8 @@
    "720": "google-dash-720.webp",
    "1280": "google-dash-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#0d2e6b"
  },
  "green-android": {
   "w": 1280,
@@ -159,7 +176,8 @@
    "720": "green-android-720.webp",
    "1280": "green-android-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#2e2b23"
  },
  "green-fire": {
   "w": 1280,
@@ -168,7 +186,8 @@
    "720": "green-fire-720.webp",
    "1280": "green-fire-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#101e1c"
  },
  "green-samsung": {
   "w": 1280,
@@ -177,7 +196,8 @@
    "720": "green-samsung-720.webp",
    "1280": "green-samsung-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#252b28"
  },
  "laptop": {
   "w": 1280,
@@ -186,7 +206,8 @@
    "720": "laptop-720.webp",
    "1280": "laptop-1280.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#0c373a"
  },
  "app-smarters": {
   "w": 950,
@@ -195,7 +216,8 @@
    "720": "app-smarters-720.webp",
    "950": "app-smarters-950.webp"
   },
-  "kind": "photo"
+  "kind": "photo",
+  "bg": "#4d4564"
  },
  "p-samsung": {
   "w": 652,

@@ -507,6 +507,7 @@ if (require.main !== module) return;
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(path.join(OUT, 'assets'), { recursive: true });
 fs.cpSync(path.join(__dirname, 'assets'), path.join(OUT, 'assets'), { recursive: true });
+if (fs.existsSync(path.join(__dirname, 'static'))) fs.cpSync(path.join(__dirname, 'static'), OUT, { recursive: true }); // .htaccess, _headers, _redirects
 pages.forEach(p => fs.writeFileSync(path.join(OUT, p.file), render(p).replace(/@\//g, '')));
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p => `<url><loc>${C.domain}/${p.file}</loc><lastmod>${C.date}</lastmod><changefreq>weekly</changefreq><priority>${p.file === 'index.html' ? '1.0' : '0.8'}</priority></url>`).join('\n')}\n</urlset>`);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: Bingbot\nAllow: /\n\nSitemap: ${C.domain}/sitemap.xml\n`);

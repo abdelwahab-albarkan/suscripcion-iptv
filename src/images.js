@@ -49,8 +49,10 @@ const find = (p) => { if (fs.existsSync(path.join(SRC, p))) return path.join(SRC
 
   for (const [id, p] of Object.entries(PHOTOS)) {
     const file = find(p), m = await sharp(file).metadata(); const f = {}; let big;
-    for (const w of [720, 1280]) { const tw = Math.min(w, m.width); const r = await save(id, sharp(file).resize(tw).webp({ quality: 74, effort: 5 }), tw); f[tw] = r.name; big = r.info; }
-    manifest[id] = { w: big.width, h: big.height, f, kind: 'photo' };
+    for (const w of [720, 1280]) { const tw = Math.min(w, m.width); const r = await save(id, sharp(file).resize(tw).webp({ quality: 68, effort: 6 }), tw); f[tw] = r.name; big = r.info; }
+    const px = await sharp(file).resize(1, 1, { fit: 'fill' }).removeAlpha().raw().toBuffer(); // dominant color
+    const bg = '#' + [...px.subarray(0, 3)].map(v => v.toString(16).padStart(2, '0')).join('');
+    manifest[id] = { w: big.width, h: big.height, f, kind: 'photo', bg };
   }
   for (const [id, p] of Object.entries(PRODUCTS)) {
     const file = find(p); const f = {}; let big;
