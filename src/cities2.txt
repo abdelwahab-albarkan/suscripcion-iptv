@@ -1,0 +1,50 @@
+Barcelona: Sant Adrià de Besòs, Gavà, Premià de Mar, Igualada, Martorell, Sant Feliu de Llobregat, Santa Perpètua de Mogoda, Ripollet, Sitges, Esparreguera, Olesa de Montserrat, Montcada i Reixac
+Madrid: Torrelodones, Villaviciosa de Odón, Tres Cantos, Colmenar Viejo, San Lorenzo de El Escorial, Ciempozuelos, Arroyomolinos, Humanes de Madrid, Navalcarnero, Villanueva de la Cañada, Galapagar, Mejorada del Campo, Paracuellos de Jarama
+Valencia: Alboraya, Catarroja, Alaquàs, Quart de Poblet, Xirivella, Requena, Oliva, Carcaixent, Algemesí, Chiva, La Pobla de Vallbona
+Alicante: Crevillent, Ibi, Novelda, Pilar de la Horadada, Guardamar del Segura, El Campello, Mutxamel, Altea, La Vila Joiosa
+Sevilla: Lebrija, Coria del Río, Tomares, Bormujos, Camas, San Juan de Aznalfarache, Arahal, Osuna
+Málaga: Alhaurín de la Torre, Alhaurín el Grande, Coín, Cártama, Torrox, Álora, Campillos
+Cádiz: Barbate, Arcos de la Frontera, Conil de la Frontera, Tarifa, Ubrique, San Roque, Los Barrios
+Granada: Loja, Atarfe, Las Gabias, Albolote, Churriana de la Vega
+Murcia: Mazarrón, San Javier, Los Alcázares, San Pedro del Pinatar, Totana, Caravaca de la Cruz, Archena, Alhama de Murcia
+Pontevedra: Cangas, Lalín, Sanxenxo, Ponteareas, Cambados, Tui, A Estrada, O Porriño, Moaña
+A Coruña: Betanzos, Culleredo, Cambre, Sada
+Bizkaia: Durango, Galdakao, Erandio, Mungia, Amorebieta-Etxano
+Gipuzkoa: Hernani, Tolosa, Beasain, Hondarribia, Arrasate
+Navarra: Estella-Lizarra, Zizur Mayor
+Las Palmas: Gáldar, Ingenio, Agüimes
+Santa Cruz de Tenerife: Granadilla de Abona, Candelaria, Güímar, Icod de los Vinos
+Tarragona: El Vendrell, Amposta, Calafell, Vila-seca
+Girona: Palafrugell, Olot, Roses, Banyoles, Palamós, Sant Feliu de Guíxols
+Lleida: Mollerussa, La Seu d'Urgell, Cervera
+Zaragoza: Tarazona, Caspe, Alagón, Cuarte de Huerva
+Huesca: Jaca, Fraga, Sabiñánigo
+Teruel: Alcañiz, Andorra
+Toledo: Sonseca, Torrijos, Ocaña, Mora, Quintanar de la Orden
+Ciudad Real: Manzanares, La Solana, Daimiel, Bolaños de Calatrava
+Albacete: La Roda, Caudete, Tobarra
+Cuenca: Tarancón, Motilla del Palancar
+Guadalajara: Cabanillas del Campo, El Casar, Sigüenza
+Burgos: Aranda de Duero, Briviesca
+León: La Bañeza, Astorga
+Salamanca: Béjar, Ciudad Rodrigo, Santa Marta de Tormes
+Valladolid: Tordesillas, Peñafiel, Tudela de Duero
+Segovia: Cuéllar, El Espinar
+Ávila: Arévalo, Arenas de San Pedro
+Zamora: Toro
+Palencia: Aguilar de Campoo, Guardo
+Soria: El Burgo de Osma
+Cáceres: Coria, Trujillo, Moraleja
+Badajoz: Zafra, Montijo, Olivenza, Villafranca de los Barros
+Córdoba: Cabra, Baena, Palma del Río, Pozoblanco
+Jaén: Alcalá la Real, Bailén, Baeza, Torredonjimeno
+Huelva: Ayamonte, Moguer, Palos de la Frontera, Valverde del Camino
+Almería: Huércal-Overa, Vícar, Berja, Cuevas del Almanzora
+Asturias: Llanes, Cangas de Onís, Villaviciosa, Castrillón, Gozón
+Cantabria: Laredo, Santoña, Reinosa, Piélagos, Los Corrales de Buelna
+La Rioja: Haro, Alfaro, Nájera
+Baleares: Sóller, Alcúdia, Santa Eulària des Riu, Sant Antoni de Portmany, Ciutadella de Menorca, Felanitx, Pollença
+Lugo: Burela, Sarria, Ribadeo
+Ourense: O Barco de Valdeorras, Verín, Xinzo de Limia
+Castellón: Onda, Segorbe, Almassora, Peñíscola, Benicàssim
+Álava: Amurrio

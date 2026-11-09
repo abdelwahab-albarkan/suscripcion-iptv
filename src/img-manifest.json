@@ -1,0 +1,401 @@
+{
+ "room-warm": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "room-warm-720.webp",
+   "1280": "room-warm-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "theater": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "theater-720.webp",
+   "1280": "theater-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "family": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "family-720.webp",
+   "1280": "family-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "oled-sports": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "oled-sports-720.webp",
+   "1280": "oled-sports-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "smarters-ui": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "smarters-ui-720.webp",
+   "1280": "smarters-ui-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "epg-light": {
+  "w": 1280,
+  "h": 720,
+  "f": {
+   "720": "epg-light-720.webp",
+   "1280": "epg-light-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "epg-tivimate": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "epg-tivimate-720.webp",
+   "1280": "epg-tivimate-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "remote-hand": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "remote-hand-720.webp",
+   "1280": "remote-hand-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "chromecast": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "chromecast-720.webp",
+   "1280": "chromecast-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "devices-collection": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "devices-collection-720.webp",
+   "1280": "devices-collection-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "ethernet": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "ethernet-720.webp",
+   "1280": "ethernet-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "router": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "router-720.webp",
+   "1280": "router-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "shield1": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "shield1-720.webp",
+   "1280": "shield1-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "shield2": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "shield2-720.webp",
+   "1280": "shield2-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "vpn": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "vpn-720.webp",
+   "1280": "vpn-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "blue-room": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "blue-room-720.webp",
+   "1280": "blue-room-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "google-dash": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "google-dash-720.webp",
+   "1280": "google-dash-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "green-android": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "green-android-720.webp",
+   "1280": "green-android-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "green-fire": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "green-fire-720.webp",
+   "1280": "green-fire-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "green-samsung": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "green-samsung-720.webp",
+   "1280": "green-samsung-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "laptop": {
+  "w": 1280,
+  "h": 731,
+  "f": {
+   "720": "laptop-720.webp",
+   "1280": "laptop-1280.webp"
+  },
+  "kind": "photo"
+ },
+ "app-smarters": {
+  "w": 950,
+  "h": 550,
+  "f": {
+   "720": "app-smarters-720.webp",
+   "950": "app-smarters-950.webp"
+  },
+  "kind": "photo"
+ },
+ "p-samsung": {
+  "w": 652,
+  "h": 570,
+  "f": {
+   "420": "p-samsung-420.webp",
+   "760": "p-samsung-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-lg": {
+  "w": 760,
+  "h": 500,
+  "f": {
+   "420": "p-lg-420.webp",
+   "760": "p-lg-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-androidtv": {
+  "w": 672,
+  "h": 570,
+  "f": {
+   "420": "p-androidtv-420.webp",
+   "760": "p-androidtv-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-firestick": {
+  "w": 760,
+  "h": 399,
+  "f": {
+   "420": "p-firestick-420.webp",
+   "760": "p-firestick-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-xiaomi": {
+  "w": 572,
+  "h": 570,
+  "f": {
+   "420": "p-xiaomi-420.webp",
+   "760": "p-xiaomi-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-shield": {
+  "w": 493,
+  "h": 514,
+  "f": {
+   "420": "p-shield-420.webp",
+   "760": "p-shield-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-sony": {
+  "w": 699,
+  "h": 570,
+  "f": {
+   "420": "p-sony-420.webp",
+   "760": "p-sony-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-tcl": {
+  "w": 708,
+  "h": 449,
+  "f": {
+   "420": "p-tcl-420.webp",
+   "760": "p-tcl-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-appletv": {
+  "w": 668,
+  "h": 570,
+  "f": {
+   "420": "p-appletv-420.webp",
+   "760": "p-appletv-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-iphone": {
+  "w": 502,
+  "h": 570,
+  "f": {
+   "420": "p-iphone-420.webp",
+   "760": "p-iphone-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-ipad": {
+  "w": 433,
+  "h": 570,
+  "f": {
+   "420": "p-ipad-420.webp",
+   "760": "p-ipad-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-androidphones": {
+  "w": 760,
+  "h": 361,
+  "f": {
+   "420": "p-androidphones-420.webp",
+   "760": "p-androidphones-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-firetablet": {
+  "w": 338,
+  "h": 231,
+  "f": {
+   "420": "p-firetablet-420.webp",
+   "760": "p-firetablet-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-windows": {
+  "w": 718,
+  "h": 570,
+  "f": {
+   "420": "p-windows-420.webp",
+   "760": "p-windows-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-mac": {
+  "w": 760,
+  "h": 543,
+  "f": {
+   "420": "p-mac-420.webp",
+   "760": "p-mac-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-roku": {
+  "w": 760,
+  "h": 358,
+  "f": {
+   "420": "p-roku-420.webp",
+   "760": "p-roku-760.webp"
+  },
+  "kind": "product"
+ },
+ "p-mag": {
+  "w": 760,
+  "h": 252,
+  "f": {
+   "420": "p-mag-420.webp",
+   "760": "p-mag-760.webp"
+  },
+  "kind": "product"
+ },
+ "pay-visa": {
+  "w": 222,
+  "h": 72,
+  "f": {
+   "72": "pay-visa-72.webp"
+  },
+  "kind": "pay"
+ },
+ "pay-mastercard": {
+  "w": 93,
+  "h": 72,
+  "f": {
+   "72": "pay-mastercard-72.webp"
+  },
+  "kind": "pay"
+ },
+ "pay-paypal": {
+  "w": 73,
+  "h": 72,
+  "f": {
+   "72": "pay-paypal-72.webp"
+  },
+  "kind": "pay"
+ },
+ "pay-applepay": {
+  "w": 175,
+  "h": 72,
+  "f": {
+   "72": "pay-applepay-72.webp"
+  },
+  "kind": "pay"
+ },
+ "pay-googlepay": {
+  "w": 182,
+  "h": 72,
+  "f": {
+   "72": "pay-googlepay-72.webp"
+  },
+  "kind": "pay"
+ },
+ "pay-bitcoin": {
+  "w": 74,
+  "h": 72,
+  "f": {
+   "72": "pay-bitcoin-72.webp"
+  },
+  "kind": "pay"
+ }
+}

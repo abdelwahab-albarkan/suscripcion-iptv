@@ -1,0 +1,23 @@
+{
+  "name": "site-spain-2",
+  "version": "1.0.0",
+  "description": "Static website and server for IPTV España",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node src/build-all.js",
+    "audit": "node src/check-all.js",
+    "indexnow": "node src/indexnow.js",
+    "build:all": "node src/build-all.js",
+    "verify": "node src/verify.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "html-minifier-terser": "^7.2.0",
+    "purgecss": "^8.0.0",
+    "sharp": "^0.35.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
