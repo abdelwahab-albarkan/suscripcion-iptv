@@ -64,3 +64,4 @@ AddCharset UTF-8 .html .css .js .xml .json
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
+
