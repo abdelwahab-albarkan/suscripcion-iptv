@@ -8,6 +8,9 @@ const { minify } = require(path.join(root, 'node_modules', 'html-minifier-terser
 const OUT = path.join(root, 'site'), A = path.join(OUT, 'assets');
 
 const htmlFiles = []; (function walk(d) { fs.readdirSync(d, { withFileTypes: true }).forEach(e => { const f = path.join(d, e.name); if (e.isDirectory()) walk(f); else if (e.name.endsWith('.html')) htmlFiles.push(f); }); })(OUT);
+// En Windows/OneDrive un fichero puede estar bloqueado un instante: reintentar
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const retry = async (fn) => { for (let i = 0; ; i++) { try { return await fn(); } catch (e) { if (i >= 5) throw e; await sleep(150 * (i + 1)); } } };
 const size = (f) => fs.statSync(f).size;
 const dirSize = (d) => { let t = 0; (function w(x) { fs.readdirSync(x, { withFileTypes: true }).forEach(e => { const f = path.join(x, e.name); e.isDirectory() ? w(f) : t += size(f); }); })(d); return t; };
 const kb = (n) => (n / 1024).toFixed(1) + ' KB';
@@ -37,8 +40,8 @@ const kb = (n) => (n / 1024).toFixed(1) + ' KB';
   const opts = { collapseWhitespace: true, conservativeCollapse: true, removeComments: true, processScripts: ['application/ld+json'], minifyCSS: false, minifyJS: false, decodeEntities: false };
   for (let i = 0; i < htmlFiles.length; i += 40) {
     await Promise.all(htmlFiles.slice(i, i + 40).map(async f => {
-      let h = fs.readFileSync(f, 'utf8').replace(/assets\/style\.css/g, `assets/${cssName}`).replace(/assets\/app\.js/g, `assets/${jsName}`);
-      h = await minify(h, opts); htmlAfter += Buffer.byteLength(h); fs.writeFileSync(f, h);
+      let h = (await retry(() => fs.readFileSync(f, 'utf8'))).replace(/assets\/style\.css/g, `assets/${cssName}`).replace(/assets\/app\.js/g, `assets/${jsName}`);
+      h = await minify(h, opts); htmlAfter += Buffer.byteLength(h); await retry(() => fs.writeFileSync(f, h));
     }));
   }
 

@@ -8,7 +8,7 @@ const has = (s) => strip(s).toLowerCase().includes(KW);
 const errors = {}, warn = {};
 const bad = (k, f) => { (errors[k] ||= []).push(f); }, wr = (k, f) => { (warn[k] ||= []).push(f); };
 
-const files = []; (function w(d) { fs.readdirSync(d, { withFileTypes: true }).forEach(e => { const f = path.join(d, e.name); e.isDirectory() ? w(f) : e.name.endsWith('.html') && files.push(f); }); })(root);
+const files = []; (function w(d) { fs.readdirSync(d, { withFileTypes: true }).forEach(e => { const f = path.join(d, e.name); e.isDirectory() ? w(f) : e.name.endsWith('.html') && e.name !== '404.html' && files.push(f); }); })(root);
 const rel = (f) => path.relative(root, f).split(path.sep).join('/');
 const titles = {}, descs = {}, h1s = {}, dens = [];
 const urlFor = (r) => `${C.domain}/${r}`;
