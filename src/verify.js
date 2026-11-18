@@ -11,7 +11,11 @@ const bad = (k, f) => { (errors[k] ||= []).push(f); }, wr = (k, f) => { (warn[k]
 const files = []; (function w(d) { fs.readdirSync(d, { withFileTypes: true }).forEach(e => { const f = path.join(d, e.name); e.isDirectory() ? w(f) : e.name.endsWith('.html') && e.name !== '404.html' && files.push(f); }); })(root);
 const rel = (f) => path.relative(root, f).split(path.sep).join('/');
 const titles = {}, descs = {}, h1s = {}, dens = [];
-const urlFor = (r) => `${C.domain}/${r}`;
+const { cleanPath } = require('./structure.js');
+const urlFor = (r) => C.domain + cleanPath(r);
+const fileSet = new Set(); files.forEach(f => fileSet.add(path.relative(root, f).split(path.sep).join('/')));
+const fileFromUrl = (u) => { const p = u.slice(C.domain.length).replace(/^\//, ''); if (!p) return 'index.html'; return fileSet.has(p + '/index.html') ? p + '/index.html' : p; };
+const linkExists = (f, t) => { const base = t.startsWith('/') ? path.join(root, t) : path.join(path.dirname(f), t); const n = path.normalize(base); return fs.existsSync(n) && fs.statSync(n).isFile() || fs.existsSync(path.join(n, 'index.html')); };
 
 for (const f of files) {
   const r = rel(f), h = fs.readFileSync(f, 'utf8');
@@ -45,7 +49,7 @@ for (const f of files) {
   if (/@\//.test(h)) bad('Marcador @/ sin resolver', r);
   if (/tudominio\.com|34600000000|hola@tudominio/.test(h)) bad('Placeholders sin sustituir', r);
   if (/(?:src|href)="http:\/\//.test(h)) wr('Recurso http:// (contenido mixto)', r);
-  for (const m of h.matchAll(/(?:href|src)="([^"#]+)(#[^"]*)?"/g)) { const t = m[1]; if (/^(https?:|mailto:|tel:|data:)/.test(t)) continue; if (!fs.existsSync(path.normalize(path.join(path.dirname(f), t)))) bad('Enlace/recurso roto', `${r} -> ${t}`); }
+  for (const m of h.matchAll(/(?:href|src)="([^"#]+)(#[^"]*)?"/g)) { const t = m[1]; if (/^(https?:|mailto:|tel:|data:)/.test(t)) continue; if (!linkExists(f, t)) bad('Enlace/recurso roto', `${r} -> ${t}`); if (/(^|\/)index\.html$/.test(t) && !/^\/?404/.test(r)) bad('Enlace interno a index.html (usa URL limpia)', `${r} -> ${t}`); }
   for (const m of h.matchAll(/(?:srcset|imagesrcset)="([^"]+)"/g)) for (const part of m[1].split(',')) { const t = part.trim().split(' ')[0]; if (t && !fs.existsSync(path.normalize(path.join(path.dirname(f), t)))) bad('Imagen (srcset) rota', `${r} -> ${t}`); }
   for (const m of h.matchAll(/<img [^>]*>/g)) if (!/ alt="[^"]+"/.test(m[0]) || !/ width=/.test(m[0]) || !/ height=/.test(m[0])) bad('Imagen sin alt/width/height', r);
 }
@@ -65,7 +69,7 @@ if (!index) bad('Falta sitemap.xml', '-'); else {
     if (/&(?!amp;|lt;|gt;|quot;|apos;)/.test(x)) bad('Sitemap con & sin escapar', n);
     locs.forEach(u => { if (inSitemap.has(u)) bad('URL duplicada en sitemaps', u); inSitemap.add(u); });
   }
-  for (const u of inSitemap) { const f = u.replace(C.domain + '/', ''); if (!files.map(rel).includes(f)) bad('URL del sitemap sin archivo', u); }
+  for (const u of inSitemap) { const f = fileFromUrl(u); if (!fileSet.has(f)) bad('URL del sitemap sin archivo', u); }
   for (const f of files.map(rel)) if (!inSitemap.has(urlFor(f))) bad('Página fuera del sitemap', f);
 }
 const robots = sm('robots.txt') || ''; if (!robots.includes(`Sitemap: ${C.domain}/sitemap.xml`)) bad('robots.txt sin línea Sitemap correcta', '-');

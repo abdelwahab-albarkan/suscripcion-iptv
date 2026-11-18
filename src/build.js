@@ -472,7 +472,7 @@ function render(p) {
   const meta = (['blog', 'guias'].includes(dir0) && !p.file.endsWith('index.html')) ? `<p class="meta">Por el equipo de ${C.brand} · Actualizado el ${+dd[2]} de ${MES[+dd[1] - 1]} de ${dd[0]}</p>` : '';
   const fig = p.img ? `<figure class="hero-fig${p.img.cls ? ' ' + p.img.cls : ''}">${IM.img(p.img.id, p.img.alt, { eager: true, sizes: '(max-width:900px) 100vw, 520px' })}</figure>` : '';
   const hero = p.hero || `<section class="hero sm"><div class="wrap${p.img ? ' hero-grid' : ''}"><div class="hero-t">${ST.crumbsHtml(p)}<h1>${p.h1}</h1><p class="lead" style="max-width:760px;margin-top:16px">${p.lead}</p>${meta}</div>${fig}</div></section>`;
-  const url = C.domain + '/' + p.file;
+  const url = C.domain + ST.cleanPath(p.file);
   const ogImg = `${C.domain}/assets/img/devices-collection-1280.webp`;
   const preImg = p.img ? IM.preload(p.img.id, '(max-width:900px) 100vw, 520px') : (p.file === 'index.html' ? IM.preload('room-warm', '(max-width:900px) 100vw, 600px') : '');
   return `<!doctype html>

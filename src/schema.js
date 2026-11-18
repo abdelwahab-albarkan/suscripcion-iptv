@@ -10,19 +10,19 @@ function faqsFromBody(body) {
 }
 function listFromBody(body, domain, max = 40) {
   const seen = new Set(), items = []; const re = /<a href="@\/([^"#]+\.html)">([\s\S]*?)<\/a>/g; let m;
-  while ((m = re.exec(body)) && items.length < max) { if (seen.has(m[1])) continue; seen.add(m[1]); items.push({ '@type': 'ListItem', position: items.length + 1, name: strip(m[2]), url: `${domain}/${m[1]}` }); }
+  while ((m = re.exec(body)) && items.length < max) { if (seen.has(m[1])) continue; seen.add(m[1]); items.push({ '@type': 'ListItem', position: items.length + 1, name: strip(m[2]), url: domain + ST.cleanPath(m[1]) }); }
   return items;
 }
 
 module.exports = function schema(p, C, IM) {
-  const D = C.domain, url = `${D}/${p.file}`, dir = p.file.includes('/') ? p.file.split('/')[0] : '';
+  const D = C.domain, url = D + ST.cleanPath(p.file), dir = p.file.includes('/') ? p.file.split('/')[0] : '';
   const isIndexHub = p.file.endsWith('/index.html'), isArticle = (dir === 'blog' || dir === 'guias' || dir === 'dispositivos') && !isIndexHub;
   const imgFile = p.img && IM.M[p.img.id] ? (() => { const m = IM.M[p.img.id]; const ws = Object.keys(m.f).map(Number).sort((a, b) => a - b); return `${D}/assets/img/${m.f[ws[ws.length - 1]]}`; })() : null;
   const orgId = `${D}/#org`, webId = `${D}/#web`;
   const org = { '@type': 'Organization', '@id': orgId, name: C.brand, url: D, email: C.email, logo: { '@type': 'ImageObject', url: `${D}/assets/img/devices-collection-720.webp` }, contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', email: C.email, telephone: '+' + C.wa, availableLanguage: ['es'] }] };
   const web = { '@type': 'WebSite', '@id': webId, url: D + '/', name: C.brand, inLanguage: 'es-ES', publisher: { '@id': orgId } };
   const trail = ST.trail(p);
-  const bc = { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: trail.map(([name, f], i) => ({ '@type': 'ListItem', position: i + 1, name, item: f === 'index.html' ? D + '/' : `${D}/${f}` })) };
+  const bc = { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: trail.map(([name, f], i) => ({ '@type': 'ListItem', position: i + 1, name, item: D + ST.cleanPath(f) })) };
 
   const pageType = p.file === 'contacto-suscripcion-iptv.html' ? ['WebPage', 'ContactPage'] : isIndexHub || dir === 'comunidades' || dir === 'provincias' ? 'CollectionPage' : 'WebPage';
   const page = { '@type': pageType, '@id': `${url}#page`, url, name: strip(p.title), description: strip(p.desc), inLanguage: 'es-ES', isPartOf: { '@id': webId }, breadcrumb: { '@id': bc['@id'] } };

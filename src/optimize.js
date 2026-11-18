@@ -11,6 +11,8 @@ const htmlFiles = []; (function walk(d) { fs.readdirSync(d, { withFileTypes: tru
 // En Windows/OneDrive un fichero puede estar bloqueado un instante: reintentar
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const retry = async (fn) => { for (let i = 0; ; i++) { try { return await fn(); } catch (e) { if (i >= 5) throw e; await sleep(150 * (i + 1)); } } };
+// Enlaces internos a index.html -> URL limpia (/ , /ciudades …)
+const cleanLinks = (h) => h.replace(/href="(?!https?:|mailto:|tel:|data:|#)((?:\.\.\/|\.\/)*)((?:[^"#]*\/)?index\.html)(#[^"]*)?"/g, (m, up, p, hash) => { const q = '/' + p.replace(/index\.html$/, '').replace(/^\/+|\/+$/g, ''); return `href="${q}${hash || ''}"`; });
 const size = (f) => fs.statSync(f).size;
 const dirSize = (d) => { let t = 0; (function w(x) { fs.readdirSync(x, { withFileTypes: true }).forEach(e => { const f = path.join(x, e.name); e.isDirectory() ? w(f) : t += size(f); }); })(d); return t; };
 const kb = (n) => (n / 1024).toFixed(1) + ' KB';
@@ -41,6 +43,7 @@ const kb = (n) => (n / 1024).toFixed(1) + ' KB';
   for (let i = 0; i < htmlFiles.length; i += 40) {
     await Promise.all(htmlFiles.slice(i, i + 40).map(async f => {
       let h = (await retry(() => fs.readFileSync(f, 'utf8'))).replace(/assets\/style\.css/g, `assets/${cssName}`).replace(/assets\/app\.js/g, `assets/${jsName}`);
+      h = cleanLinks(h);
       h = await minify(h, opts); htmlAfter += Buffer.byteLength(h); await retry(() => fs.writeFileSync(f, h));
     }));
   }

@@ -42,4 +42,6 @@ function crumbsHtml(p) {
   return `<nav class="crumbs" aria-label="Ruta de navegación">${t.map(([n, f], i) => i === t.length - 1 ? `<span aria-current="page">${n}</span>` : `<a href="@/${f}">${n}</a>`).join(' <i>/</i> ')}</nav>`;
 }
 
-module.exports = { trail, crumbsHtml, HUB, cityBySlug, strip };
+// URL canónica limpia: index.html -> /, ciudades/index.html -> /ciudades (Vercel: trailingSlash=false)
+const cleanPath = (f) => f === 'index.html' ? '/' : f.endsWith('/index.html') ? '/' + f.slice(0, -'/index.html'.length) : '/' + f;
+module.exports = { trail, crumbsHtml, HUB, cityBySlug, strip, cleanPath };
